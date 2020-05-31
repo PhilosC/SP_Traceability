@@ -1,55 +1,70 @@
-title: OB_Detail
-type: object
-properties:
-  Delivery:
-    type: string
-    minLength: 10
-    maxLength: 10
-  Item:
-    type: string
-    minLength: 6
-    maxLength: 6
-  DeliveryType:
-    type: string
-    minLength: 4
-    maxLength: 4
-  ItemCategory:
-    type: string
-    minLength: 4
-    maxLength: 4
-  Plant:
-    type: string
-    minLength: 4
-    maxLength: 4
-  StorageLoc:
-    type: string
-    minLength: 4
-    maxLength: 4
-  Material:
-    type: string
-    minLength: 18
-    maxLength: 18
-  DeliveryQty:
-    type: number
-    format: float
-    description: 'Max Length 13, decimals 3.'
-  Counter:
-    type: number
-    description: 'Max Length 5, decimals 0.'
-    format: float
-  SalesUnit:
-    type: string
-    maxLength: 3
-    minLength: 3
-  Number:
-    type: integer
-    format: int32
-    description: Max length 10
-  TotalGdsMvtStat:
-    type: string
-    minLength: 1
-    maxLength: 1
-  SendFlag:
-    type: string
-    minLength: 1
-    maxLength: 1
+{
+  "title": "OB_Detail",
+  "type": "object",
+  "properties": {
+    "Delivery": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "Item": {
+      "type": "string",
+      "minLength": 6,
+      "maxLength": 6
+    },
+    "DeliveryType": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 4
+    },
+    "ItemCategory": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 4
+    },
+    "Plant": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 4
+    },
+    "StorageLoc": {
+      "type": "string",
+      "minLength": 4,
+      "maxLength": 4
+    },
+    "Material": {
+      "type": "string",
+      "minLength": 18,
+      "maxLength": 18
+    },
+    "DeliveryQty": {
+      "type": "number",
+      "format": "float",
+      "description": "Max length 13, decimals 3."
+    },
+    "Counter": {
+      "type": "string",
+      "description": "Max length 5, decimals 0."
+    },
+    "SalesUnit": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3
+    },
+    "Number": {
+      "type": "integer",
+      "format": "int32",
+      "description": "Max length 10"
+    },
+    "TotalGdsMvtStat": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1
+    },
+    "SendFlag": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1
+    }
+  }
+}
