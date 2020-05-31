@@ -1,0 +1,25 @@
+{
+  "title": "OB_QTY",
+  "type": "object",
+  "properties": {
+    "Delivery": {
+      "type": "string",
+      "minLength": 10,
+      "maxLength": 10
+    },
+    "Material": {
+      "type": "string",
+      "minLength": 18,
+      "maxLength": 18
+    },
+    "TotalBoxQty": {
+      "type": "string",
+      "description": "Max length: 10"
+    },
+    "CurrentBoxQty": {
+      "type": "string",
+      "description": "Max length: 10"
+    }
+  },
+  "description": "Object contains OB Box Qty information"
+}

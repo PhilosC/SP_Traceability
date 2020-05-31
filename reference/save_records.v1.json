@@ -1,0 +1,37 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "save_records",
+    "version": "1.0",
+    "contact": {
+      "name": "Philos Chen",
+      "email": "P.Chen2@osram.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://API-TEST.osram.com:35443/REST/(to be released)/SPTraceParaSet",
+      "description": "Test"
+    },
+    {
+      "url": "https://API.osram.com:35443/REST/(to be released)/SPTraceParaSet",
+      "description": "Production"
+    }
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {},
+    "securitySchemes": {
+      "API Key - Test": {
+        "name": "API-Key NzQ4ZDJmYTUtNmI3Zi00MzNlLWI0NTItNDJlNTIzZmJkMWI3",
+        "type": "apiKey",
+        "in": "query"
+      },
+      "API Key - 2": {
+        "name": "API-Key NzAwYjM4OWEtZGMzOS00Nzk4LWJkMWMtNTkwMDQ3ODY3NDVh",
+        "type": "apiKey",
+        "in": "query"
+      }
+    }
+  }
+}
