@@ -19,7 +19,70 @@
       "description": "Production"
     }
   ],
-  "paths": {},
+  "paths": {
+    "/check_pcode": {
+      "get": {
+        "summary": "check pcode",
+        "tags": [],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Pcode": {
+                      "type": "string",
+                      "maxLength": 71
+                    },
+                    "Type": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1,
+                      "description": "\"E\" = \"Error\", \"S\" = \"Success\"."
+                    },
+                    "Message": {
+                      "type": "string",
+                      "description": "Message details",
+                      "maxLength": 220
+                    }
+                  }
+                }
+              }
+            },
+            "headers": {}
+          }
+        },
+        "operationId": "get-check_pcode",
+        "description": "",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "minLength": "",
+              "maxLength": 71
+            },
+            "in": "query",
+            "name": "Pcode",
+            "description": "Production code / Traceability",
+            "required": true
+          },
+          {
+            "schema": {
+              "type": "string",
+              "minLength": 10,
+              "maxLength": 10
+            },
+            "in": "query",
+            "name": "ShipTo",
+            "description": "Ship-To Party",
+            "required": true
+          }
+        ]
+      }
+    }
+  },
   "components": {
     "schemas": {},
     "securitySchemes": {

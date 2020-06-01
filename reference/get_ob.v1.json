@@ -18,7 +18,75 @@
       "description": "Production"
     }
   ],
-  "paths": {},
+  "paths": {
+    "/get_ob": {
+      "get": {
+        "summary": "get OB information",
+        "tags": [],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "ExOBQty": {
+                      "$ref": "../models/OB_QTY.v1.json"
+                    },
+                    "ExOBDetail": {
+                      "$ref": "../models/OB_Detail.v1.json"
+                    },
+                    "ExMsg": {
+                      "type": "object",
+                      "properties": {
+                        "Delivery": {
+                          "type": "string",
+                          "minLength": 10,
+                          "maxLength": 10
+                        },
+                        "Item": {
+                          "type": "string",
+                          "minLength": 6,
+                          "maxLength": 6
+                        },
+                        "Type": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 1
+                        },
+                        "Message": {
+                          "type": "string",
+                          "maxLength": 220
+                        },
+                        "": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get-get_ob",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "minLength": 10,
+              "maxLength": 10
+            },
+            "in": "query",
+            "name": "Delivery",
+            "required": true,
+            "description": "Outbound delivery number"
+          }
+        ]
+      }
+    }
+  },
   "components": {
     "schemas": {},
     "securitySchemes": {

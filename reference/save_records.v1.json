@@ -18,7 +18,80 @@
       "description": "Production"
     }
   ],
-  "paths": {},
+  "paths": {
+    "/save": {
+      "post": {
+        "summary": "Save scanning results into back end ERP",
+        "tags": [],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Delivery": {
+                      "type": "string",
+                      "minLength": 10,
+                      "maxLength": 10,
+                      "example": "360439766"
+                    },
+                    "Pcode": {
+                      "type": "string",
+                      "maxLength": 71
+                    },
+                    "Type": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1,
+                      "description": "\"E\" = \"Error\", \"S\" = \"Success\"."
+                    },
+                    "Message": {
+                      "type": "string",
+                      "maxLength": 220
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "post-save",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "Based on the OB qty and OB detail to calculate the scanning results.",
+                "properties": {
+                  "Delivery": {
+                    "type": "string"
+                  },
+                  "Pcode": {
+                    "type": "string"
+                  },
+                  "IxOBQty": {
+                    "$ref": "../models/OB_QTY.v1.json"
+                  },
+                  "IxOBDetail": {
+                    "$ref": "../models/OB_Detail.v1.json"
+                  }
+                },
+                "required": [
+                  "Delivery",
+                  "Pcode",
+                  "IxOBQty",
+                  "IxOBDetail"
+                ]
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    }
+  },
   "components": {
     "schemas": {},
     "securitySchemes": {
