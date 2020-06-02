@@ -43,7 +43,8 @@
                         "Delivery": {
                           "type": "string",
                           "minLength": 10,
-                          "maxLength": 10
+                          "maxLength": 10,
+                          "example": "36010777"
                         },
                         "Item": {
                           "type": "string",
@@ -53,14 +54,13 @@
                         "Type": {
                           "type": "string",
                           "minLength": 1,
-                          "maxLength": 1
+                          "maxLength": 1,
+                          "example": "\"E\""
                         },
                         "Message": {
                           "type": "string",
-                          "maxLength": 220
-                        },
-                        "": {
-                          "type": "string"
+                          "maxLength": 220,
+                          "example": "\"No traceability material in this outbound, No scan necessary!\""
                         }
                       }
                     }
@@ -83,7 +83,8 @@
             "required": true,
             "description": "Outbound delivery number"
           }
-        ]
+        ],
+        "description": "This API is used for getting OB information(OB to be scanned, results are OB box QTY and OB information details, this is the 1st step in SP Traceability process)."
       }
     }
   },
@@ -91,12 +92,10 @@
     "schemas": {},
     "securitySchemes": {
       "API Key - Test": {
-        "name": "API-Key NzQ4ZDJmYTUtNmI3Zi00MzNlLWI0NTItNDJlNTIzZmJkMWI3",
         "type": "apiKey",
         "in": "query"
       },
       "API Key - Production": {
-        "name": "API-Key NzAwYjM4OWEtZGMzOS00Nzk4LWJkMWMtNTkwMDQ3ODY3NDVh",
         "type": "apiKey",
         "in": "query"
       }

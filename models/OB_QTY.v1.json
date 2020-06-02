@@ -1,25 +1,32 @@
 {
   "title": "OB_QTY",
   "type": "object",
+  "description": "Object contains OB Box Qty information",
   "properties": {
     "Delivery": {
       "type": "string",
       "minLength": 10,
-      "maxLength": 10
+      "maxLength": 10,
+      "description": "Outbound delivery number",
+      "example": "0302480718"
     },
     "Material": {
       "type": "string",
-      "minLength": 18,
-      "maxLength": 18
+      "maxLength": 18,
+      "description": "Material number",
+      "example": "A71154400DG"
     },
     "TotalBoxQty": {
-      "type": "string",
-      "description": "Max length: 10"
+      "type": "integer",
+      "description": "Total box qty to be scanned, max length: 10",
+      "format": "int32",
+      "example": 32
     },
     "CurrentBoxQty": {
-      "type": "string",
-      "description": "Max length: 10"
+      "type": "integer",
+      "description": "Box qty already scanned, Max length: 10",
+      "format": "int32",
+      "example": 10
     }
-  },
-  "description": "Object contains OB Box Qty information"
+  }
 }

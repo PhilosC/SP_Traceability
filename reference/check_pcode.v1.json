@@ -34,18 +34,22 @@
                   "properties": {
                     "Pcode": {
                       "type": "string",
-                      "maxLength": 71
+                      "maxLength": 71,
+                      "example": "(P)A71154400DG(W)DG(L)SP1(D)151212(C)00019387(V)0019",
+                      "description": "Production code / Traceability"
                     },
                     "Type": {
                       "type": "string",
                       "minLength": 1,
                       "maxLength": 1,
-                      "description": "\"E\" = \"Error\", \"S\" = \"Success\"."
+                      "description": "\"E\" = \"Error\", \"S\" = \"Success\".",
+                      "example": "\"S\", \"E\""
                     },
                     "Message": {
                       "type": "string",
                       "description": "Message details",
-                      "maxLength": 220
+                      "maxLength": 220,
+                      "example": "When Type is \"S\", \"OK\"; When Type is \"E\",  \"PCode is blocked\""
                     }
                   }
                 }
@@ -55,13 +59,14 @@
           }
         },
         "operationId": "get-check_pcode",
-        "description": "",
+        "description": "This is the API for pcode check, it's a standalone function.Normally if you you suspect anything wrong with the pcode, you can pre-check the pcode before SP Traceability scanning, also the Pcode check function is nested in save_records API.",
         "parameters": [
           {
             "schema": {
               "type": "string",
               "minLength": "",
-              "maxLength": 71
+              "maxLength": 71,
+              "example": "(P)A71154400DG(W)DG(L)SP1(D)151212(C)00019387(V)0019"
             },
             "in": "query",
             "name": "Pcode",
@@ -72,7 +77,8 @@
             "schema": {
               "type": "string",
               "minLength": 10,
-              "maxLength": 10
+              "maxLength": 10,
+              "example": "0051000001"
             },
             "in": "query",
             "name": "ShipTo",
@@ -87,12 +93,10 @@
     "schemas": {},
     "securitySchemes": {
       "API Key - Test": {
-        "name": "API-Key NzQ4ZDJmYTUtNmI3Zi00MzNlLWI0NTItNDJlNTIzZmJkMWI3",
         "type": "apiKey",
         "in": "header"
       },
       "API Key - Production": {
-        "name": "API-Key NzAwYjM4OWEtZGMzOS00Nzk4LWJkMWMtNTkwMDQ3ODY3NDVh",
         "type": "apiKey",
         "in": "header"
       }

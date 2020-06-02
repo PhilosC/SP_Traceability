@@ -39,17 +39,20 @@
                     },
                     "Pcode": {
                       "type": "string",
-                      "maxLength": 71
+                      "maxLength": 71,
+                      "example": "(P)A71154400DG(W)DG(L)SP1(D)151212(C)00019387(V)0019"
                     },
                     "Type": {
                       "type": "string",
                       "minLength": 1,
                       "maxLength": 1,
-                      "description": "\"E\" = \"Error\", \"S\" = \"Success\"."
+                      "description": "\"E\" = \"Error\", \"S\" = \"Success\".",
+                      "example": "\"S\", \"E\""
                     },
                     "Message": {
                       "type": "string",
-                      "maxLength": 220
+                      "maxLength": 220,
+                      "example": "\"Material is not correct!\""
                     }
                   }
                 }
@@ -66,10 +69,13 @@
                 "description": "Based on the OB qty and OB detail to calculate the scanning results.",
                 "properties": {
                   "Delivery": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Outbound delivery number"
                   },
                   "Pcode": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "Production code / Traceability",
+                    "example": "(P)A71154400DG(W)DG(L)SP1(D)151212(C)00019387(V)0019"
                   },
                   "IxOBQty": {
                     "$ref": "../models/OB_QTY.v1.json"
@@ -88,7 +94,8 @@
             }
           },
           "description": ""
-        }
+        },
+        "description": "Based on the OB information in get_ob API, This API is the 2nd process in SP Traceability process, used to save scanning results."
       }
     }
   },
@@ -96,12 +103,10 @@
     "schemas": {},
     "securitySchemes": {
       "API Key - Test": {
-        "name": "API-Key NzQ4ZDJmYTUtNmI3Zi00MzNlLWI0NTItNDJlNTIzZmJkMWI3",
         "type": "apiKey",
         "in": "query"
       },
       "API Key - 2": {
-        "name": "API-Key NzAwYjM4OWEtZGMzOS00Nzk4LWJkMWMtNTkwMDQ3ODY3NDVh",
         "type": "apiKey",
         "in": "query"
       }
