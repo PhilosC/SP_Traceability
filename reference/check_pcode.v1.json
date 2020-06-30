@@ -3,7 +3,7 @@
   "info": {
     "title": "check_pcode",
     "version": "1.0",
-    "description": "",
+    "description": "Check Pcode block",
     "contact": {
       "name": "Philos Chen",
       "email": "P.Chen2@osram.com"
@@ -23,7 +23,6 @@
     "/SPTracePara_PcodeSet": {
       "get": {
         "summary": "check pcode",
-        "tags": [],
         "responses": {
           "201": {
             "description": "Created",
@@ -46,7 +45,7 @@
                           "minLength": 1,
                           "maxLength": 1,
                           "description": "\"E\" = \"Error\", \"S\" = \"Success\".",
-                          "example": "\"S\", \"E\""
+                          "example": "S"
                         },
                         "Message": {
                           "type": "string",
@@ -92,7 +91,7 @@
           {
             "schema": {
               "type": "string",
-              "minLength": "",
+              "minLength": 0,
               "maxLength": 71,
               "example": "(P)A71154400DG(W)DG(L)SP1(D)151212(C)00019387(V)0019"
             },

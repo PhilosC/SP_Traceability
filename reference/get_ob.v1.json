@@ -2,6 +2,7 @@
   "openapi": "3.0.0",
   "info": {
     "title": "get_scanning_ob",
+    "description": "Get OB Qty",
     "version": "1.0",
     "contact": {
       "name": "Philos Chen",
@@ -34,34 +35,68 @@
                     "ExOBQty": {
                       "$ref": "../models/OB_QTY.v1.json"
                     },
-                    "ExOBDetail": {
-                      "$ref": "../models/OB_Detail.v1.json"
-                    },
                     "ExMsg": {
                       "type": "object",
                       "properties": {
                         "Delivery": {
                           "type": "string",
-                          "minLength": 10,
                           "maxLength": 10,
-                          "example": "36010777"
+                          "example": "36010777",
+                          "minLength": 0
                         },
                         "Item": {
                           "type": "string",
-                          "minLength": 6,
-                          "maxLength": 6
+                          "maxLength": 6,
+                          "minLength": 0
                         },
                         "Type": {
                           "type": "string",
                           "minLength": 1,
                           "maxLength": 1,
-                          "example": "\"E\""
+                          "example": "E"
                         },
                         "Message": {
                           "type": "string",
                           "maxLength": 220,
                           "example": "\"No traceability material in this outbound, No scan necessary!\""
                         }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "d": {
+                        "results": [
+                          {
+                            "Delivery": "360439809",
+                            "ExOBMsg": {
+                              "results": [
+                                {
+                                  "Delivery": "360439809",
+                                  "Type": "R",
+                                  "Message": "OB 0360439809 has been scanned."
+                                },
+                                {
+                                  "Delivery": "360439809",
+                                  "Type": "S",
+                                  "Message": "OK"
+                                }
+                              ]
+                            },
+                            "ExOBQty": {
+                              "results": [
+                                {
+                                  "Delivery": "360439809",
+                                  "Material": "AM090841702",
+                                  "TotalBoxQty": 28,
+                                  "CurrentBoxQty": 27
+                                }
+                              ]
+                            }
+                          }
+                        ]
                       }
                     }
                   }

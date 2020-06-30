@@ -19,7 +19,7 @@
     }
   ],
   "paths": {
-    "SPTracePara_SaveSet": {
+    "/SPTracePara_SaveSet": {
       "post": {
         "summary": "Save scanning results into back end ERP",
         "tags": [],
@@ -33,9 +33,9 @@
                   "properties": {
                     "Delivery": {
                       "type": "string",
-                      "minLength": 10,
                       "maxLength": 10,
-                      "example": "360439766"
+                      "example": "360439766",
+                      "minLength": 0
                     },
                     "Pcode": {
                       "type": "string",
@@ -47,12 +47,72 @@
                       "minLength": 1,
                       "maxLength": 1,
                       "description": "\"E\" = \"Error\", \"S\" = \"Success\".",
-                      "example": "\"S\", \"E\""
+                      "example": "E"
                     },
                     "Message": {
                       "type": "string",
                       "maxLength": 220,
                       "example": "\"Material is not correct!\""
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "d": {
+                        "Delivery": "360439809",
+                        "Pcode": "(P)AM090841702(W)54(L)HCA(D)110420(S)C(V)0001",
+                        "Rescan": "",
+                        "IxOBQty": {
+                          "results": [
+                            {
+                              "Delivery": "360439809",
+                              "Material": "AM090841702",
+                              "TotalBoxQty": 28,
+                              "CurrentBoxQty": 28
+                            }
+                          ]
+                        },
+                        "ExSaveMsg": {
+                          "results": [
+                            {
+                              "Delivery": "360439809",
+                              "Pcode": "(P)AM090841702(W)54(L)HCA(D)110420(S)C(V)0001",
+                              "Type": "S",
+                              "Message": "Save scanning data success!"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "example-2": {
+                    "value": {
+                      "d": {
+                        "Delivery": "360439809",
+                        "Pcode": "(P)AM090841702(W)54(L)HCA(D)110420(S)C(V)0002",
+                        "Rescan": "X",
+                        "IxOBQty": {
+                          "results": [
+                            {
+                              "Delivery": "360439809",
+                              "Material": "AM090841702",
+                              "TotalBoxQty": 28,
+                              "CurrentBoxQty": 27
+                            }
+                          ]
+                        },
+                        "ExSaveMsg": {
+                          "results": [
+                            {
+                              "Delivery": "360439809",
+                              "Pcode": "(P)AM090841702(W)54(L)HCA(D)110420(S)C(V)0002",
+                              "Type": "S",
+                              "Message": "Save scanning data success!"
+                            }
+                          ]
+                        }
+                      }
                     }
                   }
                 }
@@ -80,15 +140,15 @@
                   "IxOBQty": {
                     "$ref": "../models/OB_QTY.v1.json"
                   },
-                  "IxOBDetail": {
-                    "$ref": "../models/OB_Detail.v1.json"
+                  "Rescan": {
+                    "type": "string",
+                    "description": "if the OB was already scanned before, and you want to clear the previous records to scan again, please fill \"X\""
                   }
                 },
                 "required": [
                   "Delivery",
                   "Pcode",
-                  "IxOBQty",
-                  "IxOBDetail"
+                  "IxOBQty"
                 ]
               }
             }
