@@ -10,16 +10,16 @@
   },
   "servers": [
     {
-      "url": "https://API-TEST.osram.com:35443/REST/(to be released)/SPTraceParaSet",
+      "url": "https://API-TEST.osram.com:35443/REST/87ID2380PL",
       "description": "Test"
     },
     {
-      "url": "https://API.osram.com:35443/REST/(to be released)/SPTraceParaSet",
+      "url": "https://API.osram.com:35443/REST/87ID2380PL",
       "description": "Production"
     }
   ],
   "paths": {
-    "/save": {
+    "SPTracePara_SaveSet": {
       "post": {
         "summary": "Save scanning results into back end ERP",
         "tags": [],
@@ -96,7 +96,8 @@
           "description": ""
         },
         "description": "Based on the OB information in get_ob API, This API is the 2nd process in SP Traceability process, used to save scanning results."
-      }
+      },
+      "parameters": []
     }
   },
   "components": {

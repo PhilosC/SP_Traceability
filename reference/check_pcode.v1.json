@@ -11,16 +11,16 @@
   },
   "servers": [
     {
-      "url": "https://API-TEST.osram.com:35443/REST/(to be released)/SPTracePara_PcodeSet",
+      "url": "https://API-TEST.osram.com:35443/REST/87ID2380PL",
       "description": "Test"
     },
     {
-      "url": "https://API.osram.com:35443/REST/(to be released)/SPTracePara_PcodeSet",
+      "url": "https://API.osram.com:35443/REST/87ID2380PL",
       "description": "Production"
     }
   ],
   "paths": {
-    "/check_pcode": {
+    "/SPTracePara_PcodeSet": {
       "get": {
         "summary": "check pcode",
         "tags": [],
@@ -86,7 +86,8 @@
             "required": true
           }
         ]
-      }
+      },
+      "parameters": []
     }
   },
   "components": {

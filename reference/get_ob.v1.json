@@ -10,16 +10,16 @@
   },
   "servers": [
     {
-      "url": "https://API-TEST.osram.com:35443/REST/(to be released)/SPTracePara_OBSet",
+      "url": "https://API-TEST.osram.com:35443/REST/87ID2380PL",
       "description": "Test"
     },
     {
-      "url": "https://API.osram.com:35443/REST/(to be released)/SPTracePara_OBSet",
+      "url": "https://API.osram.com:35443/REST/87ID2380PL",
       "description": "Production"
     }
   ],
   "paths": {
-    "/get_ob": {
+    "/SPTracePara_OBSet": {
       "get": {
         "summary": "get OB information",
         "tags": [],
@@ -84,8 +84,9 @@
             "description": "Outbound delivery number"
           }
         ],
-        "description": "This API is used for getting OB information(OB to be scanned, results are OB box QTY and OB information details, this is the 1st step in SP Traceability process)."
-      }
+        "description": "This API is used for getting OB information(OB to be scanned, results are OB box QTY , this is the 1st step in SP Traceability process)."
+      },
+      "parameters": []
     }
   },
   "components": {
