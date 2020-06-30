@@ -32,24 +32,52 @@
                 "schema": {
                   "type": "object",
                   "properties": {
-                    "Pcode": {
-                      "type": "string",
-                      "maxLength": 71,
-                      "example": "(P)A71154400DG(W)DG(L)SP1(D)151212(C)00019387(V)0019",
-                      "description": "Production code / Traceability"
-                    },
-                    "Type": {
-                      "type": "string",
-                      "minLength": 1,
-                      "maxLength": 1,
-                      "description": "\"E\" = \"Error\", \"S\" = \"Success\".",
-                      "example": "\"S\", \"E\""
-                    },
-                    "Message": {
-                      "type": "string",
-                      "description": "Message details",
-                      "maxLength": 220,
-                      "example": "When Type is \"S\", \"OK\"; When Type is \"E\",  \"PCode is blocked\""
+                    "ExPcodeMsg": {
+                      "type": "object",
+                      "properties": {
+                        "Pcode": {
+                          "type": "string",
+                          "maxLength": 71,
+                          "example": "(P)A71154400DG(W)DG(L)SP1(D)151212(C)00019387(V)0019",
+                          "description": "Production code / Traceability"
+                        },
+                        "Type": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 1,
+                          "description": "\"E\" = \"Error\", \"S\" = \"Success\".",
+                          "example": "\"S\", \"E\""
+                        },
+                        "Message": {
+                          "type": "string",
+                          "description": "Message details",
+                          "maxLength": 220,
+                          "example": "When Type is \"S\", \"OK\"; When Type is \"E\",  \"PCode is blocked\""
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "example-1": {
+                    "value": {
+                      "d": {
+                        "results": [
+                          {
+                            "Pcode": "(P)AM090841702(W)54(L)HCA(D)110420(S)C(V)0001",
+                            "ShipTo": "",
+                            "ExPcodeMsg": {
+                              "results": [
+                                {
+                                  "Pcode": "(P)AM090841702(W)54(L)HCA(D)110420(S)C(V)0001",
+                                  "Type": "S",
+                                  "Message": "OK"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
                     }
                   }
                 }
